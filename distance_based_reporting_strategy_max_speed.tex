@@ -1,5 +1,5 @@
 \subsection{Distance-based Reporting Strategy - Max Speed}
-During the analysis of the data from the distance based reporting with a maximum speed (DBMS), the accuracy distances was very high. The accuracy show how precise the location is where a low number indicates that you are close to your target. The DBMS and accelerometer is compared in figure-\ref{maxspeedaccelerometeraccuracy}
+During the analysis of the data from the distance based reporting with a maximum speed (MS), the accuracy distances was very high. The accuracy show how precise the location is where a low number indicates that you are close to your target. The DBMS and accelerometer is compared in figure-\ref{maxspeedaccelerometeraccuracy} it can be seen that the accuracies are way worse than for the accelerometer, this can also be seen on the Google Earth plot of the route.
 
 \begin{figure}[h]
 \begin{tikzpicture}
@@ -8,7 +8,7 @@ During the analysis of the data from the distance based reporting with a maximum
 width=7cm,
 height=6cm,
 axis x line*=bottom,
-legend style={at={(0.5,-0.30)},
+legend style={at={(0.5,1.2)},
 anchor=north,legend columns=-1},
 xlabel={Location number},
 axis y line*=left,
@@ -28,6 +28,4 @@ grid=none
 \label{maxspeedaccelerometeraccuracy}
 \end{figure}
 
-The high numbers on the accuracy curve is probably due to the GPS switching off and having to do a cold start [REFERENCES].
-
-Hvordan jeg loeser dette skulle i det kapitel, der kommer om lidt?
+The high numbers on the accuracy curve is probably due to the GPS switching off and having to do a cold start[REFERENCES]. This is also suggested by figure-\ref{locationsreadandsent} that shows way fewer readings by MS. The MS algorithm performs very well on the amount of locations read from the GPS at a rate of only $5.4$ messages per minute, but the accuracy should probably be better. It sends fixes to the server at a rate of $1.5$ per minute.
