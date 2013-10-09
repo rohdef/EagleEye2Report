@@ -1,2 +1,31 @@
 \subsection{Distance-based Reporting Strategy - Max Speed}
-\input{chapterExample}
+During the analysis of the data from the distance based reporting with a maximum speed (DBMS), the accuracy distances was very high. The accuracy show how precise the location is where a low number indicates that you are close to your target. The DBMS and accelerometer is compared in figure-\ref{maxspeedaccelerometeraccuracy}
+
+\begin{figure}[h]
+\begin{tikzpicture}
+
+\begin{axis}[
+legend style = { at = {(0.75,1.25)}},
+width=7cm,
+height=6cm,
+axis x line*=bottom,
+xlabel={Measurement number},
+axis y line*=left,
+ylabel={Accuracy (m)},
+grid=none
+]
+\addplot[color=blue,mark=none] table {tabledata/DBRSAccelerometer.accuracies};
+\addlegendentry{Accelerometer};
+\addplot[color=red,mark=none] table {tabledata/DBRSMaxSpeed.accuracies};
+\addlegendentry{Max speed};
+\end{axis}
+
+\end{tikzpicture}
+
+\caption{Comparison of accuracies for the max speed and accelerometer algorithms. Accuracy is how far from our actual location we could be. Measurement number is the index for the reading on the server.}
+\label{maxspeedaccelerometeraccuracy}
+\end{figure}
+
+The high numbers on the accuracy curve is probably due to the GPS switching off and having to do a cold start [REFERENCES].
+
+Hvordan jeg loeser dette skulle i det kapitel, der kommer om lidt?
