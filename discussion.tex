@@ -1,6 +1,7 @@
 \subsection{Discussion}
 % Mandatory: Create screenshots using Google Earth for each of the scenarios of the collected KML files. The screenshots should include a path that marks the actually walked route. Comment on the results in the report and discuss how GPS errors impacted the results.
 % Mandatory: Make a list with the following entries for each scenario: strategy, number of GPS fixes, number of uplink messages, time span, GPS fixes per second, uplink messages per second and comment on them in the report with respect to relevant literature. Discuss what pervasive positioning applications the different strategies are relevant for.
+The various methods for reading GPS have various advantages and disadvangtages. The periodic reporting strategy sends a big amount of locations as seen in figure-\ref{locationsreadandsent}, this have the advantage of getting a huge precision of the user and being able to track the movement in a detailed way. This also overcomes the issue with cutting corners off that the distance based algorithms have. The downside of this is that the amount of GPS readings and sending data to the server would also increase the battery use a lot. Thus this will be most suitable in cases where a high precision is needed.
 
 \begin{figure}[h]
 \begin{tikzpicture}
@@ -21,8 +22,11 @@
 \end{tikzpicture}
 \label{locationsreadandsent}
 \caption{Comparison of the amount of GPS fixes read and the amount of fixes sent to the server.}
-
 \end{figure}
+
+As seen in figure-\ref{locationsreadandsent} the three distance based algorithms lower the amount of readings sent a lot compared to the periodic strategy. Thus these looses some of the accuracy, but with the benefit of reading and sending less data. Most notably the distance based with the accelerometer and the max speed reads fewer data while offline too. The max speed algorithm also have a way lower accuracy, but would be optimal for cases where only a rough position is needed. On the other hand if accuracy is needed the accelerometer seems to be a good tradeoff.
+
+Mostly the walking paths (shown in the appendix) is quite close to the ground truth, but for the distance based algorithms the corners can be cut off.
 
 \begin{figure}[h]
 \begin{tikzpicture}
@@ -41,32 +45,6 @@
 \legend{GPS fixes/sec (\%), Positions sent/sec (\%s)}
 \end{axis}
 \end{tikzpicture}
+\caption{The amount of fixes read and the amount of positions sent to the server relative to time.}
+\label{fixesandsendrelativetotime}
 \end{figure}
-
-\begin{table*}[!h]
-\begin{tabular}{lrrrrr}
-
-& Number of & Number of & Time span & GPS fixes & Uplink messages \\
-
-& GPS fixes & uplink messages & in seconds & per second & per second \\
-
-\hline
-
-Periodic Reporting Strategy & 663 & 616 & 668 & 99,25 \% & 92,22 \% \\
-
-\hline
-
-Distance-based Reporting Strategy & 585 & 15 & 648 & 90,28 \% & 2,31 \% \\
-
-\hline
-
-DBRS: Accelerometer & 463 & 14 & 660 & 70,15 \% & 2,12 \% \\
-
-\hline
-
-DBRS: Max Speed & 58 & 16 & 650 & 8,92 \% & 2,46 \% \\
-
-\hline
-
-\end{tabular}
-\end{table*}
