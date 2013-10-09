@@ -1,2 +1,6 @@
 \subsection{Distance-based Reporting Strategy}
-\input{chapterExample}
+The distance of 50 meters is used for the measurements of this algorithm.
+
+The first location L0 is far off from the real starting point, which assumes to be due to the cold start of the in-build GPS. Afterwards the points L1 - L5 is almost equal to the truth ground. But at the corner C between L5 and L6 the algorithm estimate a straight line, which cut off the real corner. The pause of 1 minute does not effect the path from L6 to L7, which fits well. But point L8 is placed almost inside the building, which makes the corner of L7 - L9 looks like L5 - L6. But it is a different situation because the corner of L7 - L9 should have the point L8 to make the corner right. But due to inaccuracy at point L8, it cut of the corner and make it look like L8 was not there. There is a low accuray at the point L10, which is far of in the building. The reason is not a cold start due of the pause, because the GPS will not turn off due to the regular GPS fixes. The corner of L11 and L12 near G is cut of like the corner at C. The points L13 and L14 fit well to the truth ground.
+
+This algorithm suites best for a static or regular direction, because it has a tendency to cut of corners. It seems like it fits well for the goal of efficient position updating due the few locations, but it uses a lot of GPS fixes to determine when the configured distance is done.
