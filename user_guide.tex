@@ -2,13 +2,17 @@
 The user guide is divided into the two following parts, A) Android application (Client) and B) Java application (Server)
 
 \subsubsection*{Android application (Client)}
-There is a user interface (UI) for the client, which is sketched at the following figure.
+There is a user interface (UI) for the client, which is sketched in figure-\ref{androidgui}.
 
+\begin{figure}[h]
 \includegraphics{GUI}
+\caption{Sketch of the Android GUI}
+\label{androidgui}
+\end{figure}
 
 Chose one of the four algorithms, set the respective settings and press the "Start" button. Then the client sends locations to the server according to the chosen algorithm.
 
-The server is expected to be located at www.rohdef.dk at port 57005, which is defined at line 37 in the class ServerRegistrar (Package: dk.au.cs.EagleEye2.registrars).
+The server is expected to be located at rohdef.dk at port 57005, which is defined at line 37 in the class ServerRegistrar (Package: dk.au.cs.EagleEye2.registrars).
 
 \subsubsection*{Java applikation (Server)}
 There is no GUI for the server, but it takes the following command line arguments.
@@ -19,4 +23,8 @@ There is no GUI for the server, but it takes the following command line argument
   \item testMode: Return the text capitalized to the client.
 \end{itemize}
 
-The server listens at port 57005, which is defined at line 76 in the class Main.
+The server listens at port 57005, which is defined at line 76 in the class Main. To run the server copy the jar-file to a desired location and have an folder named data in the same directory and start the server by running:
+
+\[
+$ java -jar EagleEye2Server.jar --runServer
+\]
