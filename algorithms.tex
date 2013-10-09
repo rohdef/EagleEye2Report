@@ -1,0 +1,10 @@
+\subsubsection{Algorithms}
+The following algorithms is implemented and evaluated.
+
+Periodic Reporting Strategy (PRS): For each specified number of seconds a GPS fix is requested. Each GPS fix is sent to the server.
+
+Distance-based Reporting Strategy (DBRS): The client continuously receive GPS fixes, but only sends the location to the server, when the distance to the last location crosses a specified distance threshold.
+
+Distance-based Reporting Strategy - Accelerometer (DBRS - A): This is an extension of DBRS, where the client only receives GPS fixes when the target is moving according to the accelerometer. If the accelerometer shows no movement, it is assumed that the target is at the last location.
+
+Distance-based Reporting Strategy - Max Speed (DBRS - MS): This is also an extension of DBRS, this time where GPS fixes is request, when the target is expected to reach the distance threshold when it is moving with a specified max speed. If a GPS fix is requested, but the target has not reached the distance threshold as expected, the GPS fix is discarded and the client waits for the remaining distance to be done.
