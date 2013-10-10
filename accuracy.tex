@@ -1,2 +1,2 @@
 \subsection{Accuracy}
-\input{chapterExample}
+When the GPS starts from a cold start the uncertainty of the GPS readings is relatively high. In a lot of cases a higher accuracy would be needed, and in these cases it should take multiple readings till some desired accuracy is reached. This could have the downside that it could keep requesting locations when the GPS conditions is bad. Depending on the use case such an algorithm could be designed with a threshold for how many tries to get and then either use the accelerometer to detect movement (the GPS signal conditions should change in this case) or wait for some time before trying again, to save power.

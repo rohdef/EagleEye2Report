@@ -1,0 +1,12 @@
+\subsection{Periodic Reporting Strategy}
+This strategy is measured with the time period set to 1 second, which means we assume roughly 11 * 60 = 660 locations to be sent to the server for the walk. Thus only the place mark correspond to the time of the fix points is shown at the screen shot. 
+
+<<<<<<< HEAD
+The first location is placed in the middle of the crossroad, which fit explanation of cold start of the build-in GPS. Then the accuracy is well along the fix points B and C. But at point L236 near D with a stop of 1 minute, there is some fluctuations. Afterwards at point L347 near E the estimated position is placed almost in the building, which also is a bit off. At point L399 - L457 there is almost no fluctuations, which differs from the last stop. Later at point L523 near H the GPS estimate the position to be at the opposite side of the road. But the last position L615 near I ends to be close to the real position.
+
+The first stop has some fluctuations, while the second stop does not. The GPS is continuously running and therefore high accuracy and no fluctuations is expected at the stops.
+=======
+The first location is placed in the middle of the crossroad, which is probably explained by cold start of the GPS. After that the accuracy fits the fix points B and C quite good. But at point L236 near D where we stopped for 1 minute, there are some fluctuations. Afterwards at point L347 near E the estimated position is placed almost inside the building, which also is a bit off. At point L399 - L457 there is almost no fluctuations even though there also was a stop of 1 minute. Later at point L523 near H the GPS estimate the position to be at the opposite side of the road. But the last position L615 near I ends to be close to the real position.
+>>>>>>> 05bed14662aecad9ca2aa24ea4d5dafbee8ff33f
+
+Due to the many locations sent to the server, this algorithm does not match the goal of this project, to make efficient position updating with few GPS fixes and few transmissions to achieve low battery consumption.

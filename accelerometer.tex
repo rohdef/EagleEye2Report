@@ -1,2 +1,4 @@
 \subsection{Accelerometer}
-\input{chapterExample}
+The accelerometer measurements has the potential for a few improvements. First off our data could suggest that the detection of movement could be improved. A sliding window algorithm would probably improve the accuracy of the movement detection. Basically have the $n$ last magnitude ($\sqrt(x^2+y^2+z^2)-gravity$) readings and take the average of them. This could help remove noise from the user taking the phone or normal phone operations.
+
+Also the threshold used to detect when something is considered as movement should be found by gathering empirical data of peoples movements, to find an appropriate $n$ for the sliding window and a threshold for how much movement that is needed to consider it movement.
